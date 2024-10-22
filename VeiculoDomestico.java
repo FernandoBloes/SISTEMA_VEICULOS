@@ -1,24 +1,24 @@
 public class VeiculoDomestico extends Veiculo {
 
-    // Atributos da classe VeiculiDomestico
+    // Definição das propriedades da classe VeiculoDomestico
     public int passageiros;
     public String freio;
     public boolean airBag;
 
-    // Construção do objeto
+    // Construtor padrão da classe
     public VeiculoDomestico() {
-        // Construtor padrão
+        // Inicialização padrão
     }
 
-    // Construtor do objeto com os valores dados
+    // Construtor que aceita valores para as propriedades
     public VeiculoDomestico(int passageiros, String freio, boolean airBag) {
-        super(); // Inicializa os atributos da superclasse
+        super(); // Chama o construtor da superclasse
         this.passageiros = passageiros;
         this.freio = freio;
         this.airBag = airBag;
     }
 
-    // Método insert
+    // Método para gerar o comando de inserção no banco de dados
     @Override
     public String insert() {
         return String.format(
@@ -27,12 +27,12 @@ public class VeiculoDomestico extends Veiculo {
                 getModelo(), getAnoFabricacao(), getMontadora(), getCor(), passageiros, freio, airBag);
     }
 
-    // Pegando o número de passageiros
+    // Método para obter o número de passageiros
     public int getPassageiros() {
         return passageiros;
     }
 
-    // Colocando o número de passageiros
+    // Método para definir o número de passageiros
     public void setPassageiros(int passageiros) {
         if (passageiros <= 0) {
             throw new IllegalArgumentException("Número de passageiros deve ser positivo.");
@@ -40,21 +40,22 @@ public class VeiculoDomestico extends Veiculo {
         this.passageiros = passageiros;
     }
 
-    // Pegendo o freio do carro
+    // Método para obter o tipo de freio
     public String getFreio() {
         return freio;
     }
 
-    // Colocando o freio do carro
+    // Método para definir o tipo de freio
     public void setFreio(String freio) {
         this.freio = freio;
     }
 
+    // Método para verificar se o veículo possui airbag
     public boolean isAirBag() {
         return airBag;
     }
 
-    // Colocando o airbag no carro
+    // Método para definir a presença do airbag
     public void setAirBag(boolean airBag) {
         this.airBag = airBag;
     }

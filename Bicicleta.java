@@ -1,26 +1,26 @@
 public class Bicicleta extends Veiculo {
 
-    // Atributos da classe Bicicleta
+    // Variáveis específicas da classe Bicicleta
     public String material;
     public String marca;
     public int marchas;
     public boolean amortecedores;
 
-    // Construtor do objeto
+    // Construtor padrão da classe Bicicleta
     public Bicicleta() {
-        // Construtor padrão
+
     }
 
-    // Construtor do objeto com os valores dados
+    // Construtor com parâmetros para inicializar os atributos da Bicicleta
     public Bicicleta(String material, int marchas, boolean amortecedores, String marca) {
-        super(); // Inicializa os atributos da superclasse
+        super(); // Chamando o construtor da classe pai (Veiculo)
         this.material = material;
         this.marchas = marchas;
         this.amortecedores = amortecedores;
         this.marca = marca;
     }
 
-    // Método insert
+    // Método para gerar um comando SQL de inserção de dados
     @Override
     public String insert() {
         return String.format(
@@ -30,12 +30,12 @@ public class Bicicleta extends Veiculo {
                 getModelo(), getAnoFabricacao(), getMontadora(), getCor(), material, marchas, amortecedores, marca);
     }
 
-    // Pegando o material da bicicleta
+    // Retorna o material utilizado na construção da bicicleta
     public String getMaterial() {
         return material;
     }
 
-    // Colocando o material da bicicleta
+    // Define o material da bicicleta com validação
     public void setMaterial(String material) {
         if (material == null || material.isEmpty()) {
             throw new IllegalArgumentException("Material não pode ser nulo ou vazio.");
@@ -43,12 +43,12 @@ public class Bicicleta extends Veiculo {
         this.material = material;
     }
 
-    // Pegando a marca
+    // Retorna a marca da bicicleta
     public String getMarca() {
         return marca;
     }
 
-    // Colocando a marca
+    // Define a marca da bicicleta com validação
     public void setMarca(String marca) {
         if (marca == null || marca.isEmpty()) {
             throw new IllegalArgumentException("Marca não pode ser nula ou vazia.");
@@ -56,12 +56,12 @@ public class Bicicleta extends Veiculo {
         this.marca = marca;
     }
 
-    // Pegando as marchas
+    // Retorna o número de marchas da bicicleta
     public int getMarchas() {
         return marchas;
     }
 
-    // Colocando as marchas
+    // Define o número de marchas com validação
     public void setMarchas(int marchas) {
         if (marchas < 0) {
             throw new IllegalArgumentException("Número de marchas não pode ser negativo.");
@@ -69,10 +69,12 @@ public class Bicicleta extends Veiculo {
         this.marchas = marchas;
     }
 
+    // Verifica se a bicicleta possui amortecedores
     public boolean isAmortecedores() {
         return amortecedores;
     }
 
+    // Define a presença de amortecedores na bicicleta
     public void setAmortecedores(boolean amortecedores) {
         this.amortecedores = amortecedores;
     }

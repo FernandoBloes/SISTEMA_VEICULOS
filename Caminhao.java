@@ -1,22 +1,22 @@
 public class Caminhao extends Veiculo {
 
-    // Atributos da classe Caminhao
+    // Variáveis que definem os atributos do Caminhão
     public int eixo;
     public int peso;
 
-    // Construtor do objeto
+    // Construtor padrão para a classe Caminhao
     public Caminhao() {
-        // Construtor padrão
+
     }
 
-    // Construtor do objeto com os valores dados
+    // Construtor que recebe parâmetros para inicializar os atributos do Caminhão
     public Caminhao(String modelo, int anoFabricacao, String montadora, String cor, int eixo, int peso) {
-        super(); // Inicializa os atributos da superclasse
+        super(); // Chama o construtor da classe pai (Veiculo)
         this.eixo = eixo;
         this.peso = peso;
     }
 
-    // Método insert
+    // Método que retorna o comando SQL para inserção de dados no banco
     @Override
     public String insert() {
         return String.format(
@@ -25,12 +25,12 @@ public class Caminhao extends Veiculo {
                 getModelo(), getAnoFabricacao(), getMontadora(), getCor(), eixo, peso);
     }
 
-    // Pegando o eixo
+    // Retorna o número de eixos do caminhão
     public int getEixo() {
         return eixo;
     }
 
-    // Colocando o eixo
+    // Define o número de eixos com uma validação
     public void setEixo(int eixo) {
         if (eixo <= 0) {
             throw new IllegalArgumentException("Número de eixos deve ser um valor positivo.");
@@ -38,12 +38,12 @@ public class Caminhao extends Veiculo {
         this.eixo = eixo;
     }
 
-    // Pegando o peso do caminhao
+    // Retorna o peso do caminhão
     public int getPeso() {
         return peso;
     }
 
-    // Colocando o peso do caminhao
+    // Define o peso do caminhão com uma validação
     public void setPeso(int peso) {
         if (peso <= 0) {
             throw new IllegalArgumentException("Peso deve ser um valor positivo.");

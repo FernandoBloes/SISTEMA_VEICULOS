@@ -1,20 +1,20 @@
 public abstract class Veiculo {
 
-    // Atributos da classe Veiculo
+    // Definição das propriedades da classe Veiculo
     public String modelo;
     public int anoFabricacao;
     public String montadora;
     public String cor;
 
-    // Construtor do objeto
+    // Construtor padrão para a classe Veiculo
     public Veiculo() {
 
     }
 
-    // Construtor do objeto com os valores gerados
+    // Construtor que aceita valores específicos para as propriedades
     public Veiculo(String modelo, int anoFabricacao, String montadora, String cor) {
         if (modelo == null || modelo.isEmpty() || anoFabricacao <= 0) {
-            throw new IllegalArgumentException("O modelo e o ano de fabricação são obrigatórios.");
+            throw new IllegalArgumentException("Modelo e ano de fabricação são obrigatórios.");
         }
 
         this.modelo = modelo;
@@ -23,12 +23,12 @@ public abstract class Veiculo {
         this.cor = cor;
     }
 
-    // Retorno do modelo do veículo
+    // Método para obter o modelo do veículo
     public String getModelo() {
         return modelo;
     }
 
-    // Setando o modelo do veículo
+    // Método para definir o modelo do veículo
     public void setModelo(String modelo) {
         if (modelo == null || modelo.isEmpty()) {
             throw new IllegalArgumentException("Modelo não pode ser vazio.");
@@ -36,12 +36,12 @@ public abstract class Veiculo {
         this.modelo = modelo;
     }
 
-    // Pegando o ano de fabricação
+    // Método para obter o ano de fabricação
     public int getAnoFabricacao() {
         return anoFabricacao;
     }
 
-    // Colocando o ano de Fabricação
+    // Método para definir o ano de fabricação
     public void setAnoFabricacao(int anoFabricacao) {
         if (anoFabricacao <= 0) {
             throw new IllegalArgumentException("Ano de fabricação deve ser maior que zero.");
@@ -49,26 +49,26 @@ public abstract class Veiculo {
         this.anoFabricacao = anoFabricacao;
     }
 
-    // Pegando a montadora
+    // Método para obter a montadora
     public String getMontadora() {
         return montadora;
     }
 
-    // Colocando a montadora
+    // Método para definir a montadora
     public void setMontadora(String montadora) {
         this.montadora = montadora;
     }
 
-    // Pegando a cor no veículo
+    // Método para obter a cor do veículo
     public String getCor() {
         return cor;
     }
 
-    // Colocando a cor no veículo
+    // Método para definir a cor do veículo
     public void setCor(String cor) {
         this.cor = cor;
     }
 
-    // Método abstrato para gerar o comando insert
+    // Método abstrato que deve ser implementado para gerar um comando de inserção
     public abstract String insert();
 }
